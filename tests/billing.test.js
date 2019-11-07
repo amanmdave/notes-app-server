@@ -1,4 +1,14 @@
-import { calculateCost } from "../libs/billing-lib";
+//import { calculateCost } from "../libs/billing-lib";
+
+function calculateCost(storage) {
+  const rate = storage <= 10
+    ? 4
+    : storage <= 100
+      ? 2
+      : 1;
+
+  return rate * storage * 100;
+}
 
 test("Lowest tier", () => {
   const storage = 10;
